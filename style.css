@@ -1,0 +1,398 @@
+
+/* General styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #101c32;
+  --gold: #c9a45c;
+  --white: #ffffff;
+  --light: #f5f6f8;
+  --text: #4c5564;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 10px 0 18px;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+/* Header and navigation */
+.header {
+  min-height: 76px;
+  padding: 15px 7%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px #101c3210;
+}
+
+.logo {
+  color: var(--navy);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar a {
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.navbar a:hover,
+.text-link:hover {
+  color: var(--gold);
+}
+
+.navbar .nav-cta {
+  background: var(--navy);
+  color: var(--white);
+  padding: 11px 18px;
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--navy);
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+/* Hero */
+.hero {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  padding: 80px 7%;
+  background:
+    linear-gradient(90deg, #101c32 0%, #101c32ed 48%,
+    #101c3270 100%),
+    url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 690px;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin: 16px 0 24px;
+}
+
+.hero-content > p:not(.eyebrow) {
+  color: #e2e6ed;
+  max-width: 570px;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 14px 23px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+  padding: 85px 7%;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-box {
+  background: var(--navy);
+  color: var(--white);
+  padding: 40px;
+  border-bottom: 4px solid var(--gold);
+}
+
+.about-box h3 {
+  color: var(--white);
+  margin: 15px 0;
+}
+
+.about-box p {
+  margin-bottom: 0;
+}
+
+.scale-icon {
+  color: var(--gold);
+  font-size: 3rem;
+}
+
+.text-link {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* Practice areas */
+.services {
+  background: var(--light);
+  text-align: center;
+}
+
+.section-intro {
+  margin-bottom: 35px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+  text-align: left;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  border-bottom-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px #101c3210;
+}
+
+.service-card span {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.service-card h3 {
+  margin: 18px 0 12px;
+}
+
+/* Team */
+.team {
+  text-align: center;
+}
+
+.team-placeholder {
+  margin: 30px auto 0;
+  max-width: 700px;
+  background: var(--light);
+  padding: 35px;
+  border: 1px dashed #b7bec9;
+}
+
+/* Contact */
+.contact {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+}
+
+.contact h2 {
+  color: var(--white);
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 35px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.contact label {
+  font-weight: 600;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd0d8;
+  border-radius: 4px;
+  background: var(--white);
+  color: #202938;
+  font: inherit;
+  margin-bottom: 10px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: 2px solid var(--gold);
+}
+
+.contact form .btn {
+  align-self: flex-start;
+}
+
+#form-status {
+  overflow-wrap: anywhere;
+}
+
+/* Footer */
+.footer {
+  background: #0a1222;
+  color: #d7dce5;
+  padding: 35px 7%;
+  text-align: center;
+}
+
+.footer .logo {
+  display: inline-block;
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 850px) {
+  .header {
+    padding: 15px 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: 0 10px 15px #101c3210;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.25s;
+  }
+
+  .navbar.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar a {
+    padding: 13px 5px;
+  }
+
+  .navbar .nav-cta {
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: 500px;
+    padding: 65px 5%;
+  }
+
+  .section {
+    padding: 65px 5%;
+  }
+}
+
+@media (max-width: 520px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 480px;
+  }
+
+  .about-box {
+    padding: 28px;
+  }
+}
